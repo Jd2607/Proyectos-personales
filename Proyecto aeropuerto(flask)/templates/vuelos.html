@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Oferta vuelos {% endblock%}
+{% block content %}
+
+<div class="contenedor_menu">
+    <h2>Ofertas de Vuelo</h2>
+    <form method="POST" action="{{ url_for('vuelos') }}">
+        <div class="buscador">
+            <button type="submit" class="buscador_vuelo">
+                <img src="{{ url_for('static', filename='Images/icons/bx-search.svg') }}" title="Buscar" id="imgBuscar_vuelo">
+            </button>
+            <input name="txtBuscador_vuelo" type="text" id="txtBuscador_vuelo" name="buscador">
+        </div>
+    </form>
+</div>
+
+<table class="tabla_vuelo">
+{% if mensaje %}
+    <td id="ofertas" > <h2> {{ mensaje }} </h2> </td>
+{% endif %}
+
+{% if vuelos %}
+    <tr class="columnas_tabla_vuelo">
+        {% for i in range(3) %}
+            {% if vuelos[i] %}
+                <td class="ofertas"><div class="oferta"> Ofertas a <br> <h3>{{ vuelos[i]['origen_vuelo'] }}  -  {{ vuelos[i]['destino_vuelo'] }}</h3> <br><br> 
+                    Desde ${{ vuelos[i]['costo'] }}<br><br> <a href="{{ url_for('reservar_vuelos') }}"> <button class="boton"> Reservar</button> </div></td></a>
+            {% endif %}
+        {% endfor %}
+    </tr>
+
+
+    <tr class="columnas_tabla_vuelo">
+        {% for i in range(3,6) %}
+            {% if vuelos[i] %}
+                <td class="ofertas">
+                    <div class="oferta"> Ofertas a <br> 
+                        <h3>{{ vuelos[i]['origen_vuelo'] }}  -  {{ vuelos[i]['destino_vuelo'] }}</h3><br><br> 
+                        Desde ${{ vuelos[i]['costo'] }}<br><br> 
+                        <a href="{{ url_for('reservar_vuelos') }}"> <button class="boton"> Reservar</button>
+                    </div>
+                </td>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </tr>
+{% endif %}
+</table>
+{% endblock %}

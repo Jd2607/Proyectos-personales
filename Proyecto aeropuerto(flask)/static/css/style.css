@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap');
+/* Variables de Colores */
+:root{
+    --rosaPrimario: #fc2c5e;
+    --rosaPrimarioHover: #FF3F6D;
+    --rosaPrimarioPress: #DF1C4B;
+    --oscuroPrimario: #1e1e26;
+    --oscuroSecundario: #313139;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    background-color: var(--oscuroPrimario);
+}
+
+/* Desde este punto empiezan los estilos para el header de la pagina.*/
+.inicio-header {
+    height: 70px;
+    width: 100%;
+    color: #fff;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+    margin-top: 10px;
+}
+
+.logo{
+    width: 33px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li{
+    margin: 0px 20px;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+}
+/*las clases "link:after", y "link:hover::after" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los links que estan en el header(Inicio, Vuelos, y Destinos).*/
+.link:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--rosaPrimario);
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transition: all .3s;
+    will-change: width;
+}
+.link:hover::after{
+    width: 100%;
+    right: 0;
+}
+
+button{
+    background-color:  var(--rosaPrimario);
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.botones{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*las clases "button:active", y "button:hover" corresponden al efecto
+hover de antes y despues (respectivamente) que se ve al pasar el cursor
+sobre los botones que estan en el header(Iniciar Sesion, y registrarse).*/
+button:active{
+    background-color:  var(--rosaPrimarioPress);
+}
+button:hover{
+    background-color:  var(--rosaPrimarioHover);
+}
+
+.boton_login{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+.boton_logup{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+/* Aquí finaliza los estilos para el header */
+
+/* Aquí inicia el título y mensaje principal más el carrusel de imagenes */
+.bienvenida{
+    width: 100%;
+    height: 100vh;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+}
+.tituloPrincipal{
+    font-size: 87px;
+    color: #ffffff;
+}
+.mensajePrincipal{
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+}
+
+.textos{
+    margin-right: 90px;
+}
+/* Carrusel de imagenes */
+.slider{
+    width: 600px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.slider ul{
+    display: flex;
+    animation: cambio 15s infinite alternate linear;
+    width: 400%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+}
+@keyframes cambio {
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+/* final de carrusel de imagenes */
+/* Aquí finaliza el el contenido de bienvenida */
+
+/* Desde aquí empieza el footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--oscuroPrimario);
+    color: #fff;
+}
+.contenedor-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    font-size: 80%;
+    max-width:1200px;
+    margin: auto;
+    background-color:  var(--oscuroPrimario);
+    display: flex;
+    justify-content: space-between;
+}
+.informacion a{
+    font-size: 11px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.circle{
+    margin: 0px 6px;
+}
+@media screen and (max-width: 1100px){
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+/* Aquí termina el footer */
+
+/* --------------------------------------VUELOS---------------------------------------------- */
+.contenedor_menu{
+    width: 880px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin: 90px auto;
+    justify-content: space-between;
+}
+
+.buscador{
+    height: 45px;
+    width: 400px;
+    background-color: var(--oscuroSecundario);
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.buscador button{
+    width: 45px;
+    height: 45px;
+    background-color: var(--oscuroSecundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buscador input{
+    height: 45px;
+    width: 100%;
+    background-color: var(--oscuroSecundario);
+    border: none;
+    outline: none;
+}
+
+.buscador img{
+    filter: invert();
+}
+
+.tabla_vuelo{
+    width: 920px;
+    margin: 90px auto 90px;
+}
+
+
+.columnas_tabla_vuelo td{
+    background-color: var(--oscuroSecundario);
+    width: 300px;
+    height: 150px;
+    border-radius: 13px;
+    padding: 10px;
+    border: 5px solid var(--oscuroPrimario);
+}
+
+.ofertas{
+    margin: 10px;
+}
+
+.oferta button{
+    width: 100%;
+}
+
+
+/* --------------------------------------------DESTINOS-------------------------------------- */
+.contenedor_menu_destinos{
+    width: 880px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin: 90px auto 0px;
+    justify-content: space-between;
+}
+
+.buscador_destinos{
+    height: 45px;
+    width: 400px;
+    background-color: var(--oscuroSecundario);
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;  
+}
+
+.buscador_destinos button{
+    width: 45px;
+    height: 45px;
+    background-color: var(--oscuroSecundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buscador_destinos input{
+    height: 45px;
+    width: 100%;
+    background-color: var(--oscuroSecundario);
+    border: none;
+    outline: none;
+}
+
+.buscador_destinos img{
+    filter: invert();
+}
+
+.tabla_destinos{
+    width: 880px;
+    padding: 0;
+    margin: 90px auto;
+    border-spacing: 20px;
+}
+
+.informacion_destinos{
+    width: 350px;
+    height: 250px;
+}
+
+.informacion_destinos p{
+    text-align: center;
+}
+
+.informacion_destinos h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.imagen_destinos{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imagen_destinos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 7px;
+}

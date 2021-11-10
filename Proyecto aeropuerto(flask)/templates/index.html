@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %} Inicio {% endblock%}
+{% block style %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" /> {% endblock %}
+{% block content %}
+<div class="bienvenida">
+    <div class="textos">
+        <h1 class="tituloPrincipal">Bienvenidos</h1>
+        <p class="mensajePrincipal">Descubre con nosotros los diferentes lugares a los que tu y tu familia se merecen viajar.</p>
+    </div>
+    <nav>
+        <div class="slider">
+            <ul>
+                <li id="slide1">
+                    <img src="{{ url_for('static', filename='Images/destinos/CABO_SAN_JUAN.jpg') }}" alt="">
+                </li>
+                <li id="slide2">
+                    <img src="{{ url_for('static', filename='Images/destinos/Ciudad-Perdida - Magdalena.jpg') }}" alt="">
+                </li>
+                <li id="slide3">
+                    <img src="{{ url_for('static', filename='Images/destinos/fincas_eje_cafetero_sitios_turisticos_colombia_quindio_blog_cover.jpg') }}" alt="">
+                </li>
+                <li id="slide4">
+                    <img src="{{ url_for('static', filename='Images/destinos/San_Andres.jpg') }}" alt="">
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+{% endblock %}

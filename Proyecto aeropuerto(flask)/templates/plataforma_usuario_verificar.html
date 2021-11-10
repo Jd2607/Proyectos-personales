@@ -1,0 +1,39 @@
+{% extends "reservar_vuelos.html" %}
+{% block title %} Verificar vuelos {% endblock %}
+{% block contenido %}
+<div class="contenido_verificar" id="contenido">
+    <div class="contenido_principal_verificar" id="contenido_principal">
+        <div class="primera_columna">
+            <h2>Puede Verificar Sus Vuelos</h2>
+            <p>Ingrese el código del vuelo que reservó para poder ver todos sus datos</p>
+            <form action="" method="POST">
+                {{ form.codigo(id="cvuelo", placeholder="Código del vuelo") }} 
+                {{ form.verificar(id="vfvuelo", class="botonForm") }} <br>
+            </form>
+            <div class="mostrarDatosVuelo"> </div>
+            {% if vuelo %}
+                <textarea name="comenatario" id="textComent2" cols="20" rows="6" readonly>
+                    Estado: {{ vuelo[0]['estado'] }}
+                    Origen: {{ vuelo[0]['origen_vuelo'] }}
+                    Destino: {{ vuelo[0]['destino_vuelo'] }}
+                    Piloto: {{ vuelo[0]['piloto'] }}
+                    Fecha de salida: {{ vuelo[0]['fecha_salida'] }}
+                    Costo: {{ vuelo[0]['costo'] }}
+                </textarea>
+            {% endif %}
+        </div>
+        <div class="segunda_columna">
+            <div class="com_ranking">
+                <h2>Comentar</h2>
+                <input type="range" min="0" max="5" name="star" id="ranking">
+            </div>
+            {{ form.mensaje(id="textComent", cols="30", rows="10", placeholder="Ingrese su comentario") }}
+            {{ form.comentar(id="comentar", class="botonForm") }}
+            <div class="can_mod">
+                <button type="button" id="canvuelo" >Cancelar vuelo</button>
+                <button type="button" id="movuelo" >Modificar reserva</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
