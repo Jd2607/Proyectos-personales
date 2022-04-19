@@ -1,0 +1,6 @@
+Diseñe una solución orientada a objetos usando Java y Netbeans para el problema planteado. La solución debe usar buenas prácticas y los estándares de diseño desplegados 
+en la cátedra.
+
+Un analista de datos requiere ordenar un archivo de texto con muchas líneas y relleno de palabras separadas por espacios en blanco por su longitud, 
+es decir, se debe generar un nuevo archivo donde primero se encuentren todas las palabras con una letra, luego las de dos letras, luego las de tres 
+letras y así sucesivamente hasta que se agote el texto. Las palabras no tienen por qué estar ordenadas alfabéticamente.
